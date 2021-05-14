@@ -35,8 +35,7 @@ datos <- datos %>%  mutate(Año=make_date(year=Año))
 ## Punto 5
 
 ```{r}
-datasummary(Desigualdad+Progresividad+Gasto_educ+Inflacion+PIB_PER_CAPITA+Poblacion ~ Mean + SD+Median+Min+Max, data = datos)
-
+  datasummary_skim(select(datos,"Desigualdad","Progresividad","Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion"), histogram = FALSE)
 ```
 
 ## Punto 6
@@ -49,7 +48,13 @@ datos %>% ggplot(mapping = aes(x=Desigualdad))+
 ```{r}
 datos %>% ggplot(mapping = aes(x=Gasto_educ))+
   geom_histogram(binwidth = 0.4, col='black', fill='blue', alpha=0.4)+
-  labs(title = "Histograma desigualdad", y="Frecuencia", caption = "Datos Banco Mundial")
+  labs(title = "Histograma desigualdad", y="Frecuencia","Gasto en Educación", caption = "Datos Banco Mundial")+
+  
+ scale_x_continuous(
+    breaks = seq(from = 0, to = 20, by = 5)) +
+  scale_y_continuous(
+    breaks = seq(from = 0, to = 380, by = 40))
+
 
 ```
 
