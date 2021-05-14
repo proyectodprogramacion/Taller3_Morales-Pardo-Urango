@@ -1,0 +1,277 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Taller3},
+  pdfauthor={Morales, Pardo, Urango},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Taller3}
+\author{Morales, Pardo, Urango}
+\date{14/5/2021}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(wbstats)}
+\FunctionTok{library}\NormalTok{(lubridate)}
+\FunctionTok{library}\NormalTok{(knitr)}
+\FunctionTok{library}\NormalTok{(modelsummary)}
+\FunctionTok{library}\NormalTok{(GGally)}
+\FunctionTok{library}\NormalTok{(ggthemes)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{puntos-1-4}{%
+\subsection{Puntos 1-4}\label{puntos-1-4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{z }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"SI.POV.GINI"}\NormalTok{,}\StringTok{"GC.TAX.YPKG.RV.ZS"}\NormalTok{,}\StringTok{"SE.XPD.TOTL.GD.ZS"}\NormalTok{,}\StringTok{"FP.CPI.TOTL.ZG"}\NormalTok{,}\StringTok{"NY.GDP.PCAP.CD"}\NormalTok{,}\StringTok{"SP.POP.TOTL"}\NormalTok{)}
+
+\NormalTok{datos }\OtherTok{\textless{}{-}} \FunctionTok{wb\_data}\NormalTok{(z,}\AttributeTok{country =} \StringTok{"countries\_only"}\NormalTok{, }\AttributeTok{start\_date =} \DecValTok{1960}\NormalTok{, }\AttributeTok{end\_date =} \DecValTok{2019}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datos }\OtherTok{\textless{}{-}} \FunctionTok{select}\NormalTok{(datos,}\StringTok{"iso3c"}\NormalTok{,}\StringTok{"country"}\NormalTok{,}\StringTok{"date"}\NormalTok{,}\StringTok{"SI.POV.GINI"}\NormalTok{,}\StringTok{"GC.TAX.YPKG.RV.ZS"}\NormalTok{,}\StringTok{"SE.XPD.TOTL.GD.ZS"}\NormalTok{,}\StringTok{"FP.CPI.TOTL.ZG"}\NormalTok{,}\StringTok{"NY.GDP.PCAP.CD"}\NormalTok{,}\StringTok{"SP.POP.TOTL"}\NormalTok{)}
+
+\FunctionTok{names}\NormalTok{(datos) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Código"}\NormalTok{,}\StringTok{"Pais"}\NormalTok{,}\StringTok{"Año"}\NormalTok{,}\StringTok{"Desigualdad"}\NormalTok{,}\StringTok{"Progresividad"}\NormalTok{,}\StringTok{"Gasto\_educ"}\NormalTok{,}\StringTok{"Inflacion"}\NormalTok{,}\StringTok{"PIB\_PER\_CAPITA"}\NormalTok{,}\StringTok{"Poblacion"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datos }\OtherTok{\textless{}{-}}\NormalTok{ datos }\SpecialCharTok{\%\textgreater{}\%}  \FunctionTok{mutate}\NormalTok{(Año}\OtherTok{=}\FunctionTok{make\_date}\NormalTok{(}\AttributeTok{year=}\NormalTok{Año))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{punto-5}{%
+\subsection{Punto 5}\label{punto-5}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+  \FunctionTok{datasummary\_skim}\NormalTok{(}\FunctionTok{select}\NormalTok{(datos,}\StringTok{"Desigualdad"}\NormalTok{,}\StringTok{"Progresividad"}\NormalTok{,}\StringTok{"Gasto\_educ"}\NormalTok{,}\StringTok{"Inflacion"}\NormalTok{,}\StringTok{"PIB\_PER\_CAPITA"}\NormalTok{,}\StringTok{"Poblacion"}\NormalTok{), }\AttributeTok{histogram =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+\centering
+\begin{tabular}[t]{lrrrrrrr}
+\toprule
+  & Unique (\#) & Missing (\%) & Mean & SD & Min & Median & Max\\
+\midrule
+Desigualdad & 369 & 87 & 38.5 & 9.2 & 20.7 & 36.4 & 65.8\\
+Progresividad & 3877 & 70 & 23.1 & 13.7 & -1.4 & 20.7 & 78.0\\
+Gasto\_educ & 3873 & 70 & 4.3 & 1.9 & 0.0 & 4.2 & 44.3\\
+Inflacion & 7895 & 39 & 24.4 & 339.5 & -30.2 & 4.9 & 23773.1\\
+PIB\_PER\_CAPITA & 9890 & 24 & 8594.8 & 16936.6 & 34.8 & 1949.4 & 189422.2\\
+Poblacion & 12938 & 0 & 24224621.6 & 101885266.9 & 2833.0 & 4123600.0 & 1397715000.0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\hypertarget{punto-6}{%
+\subsection{Punto 6}\label{punto-6}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datos }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Desigualdad))}\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{col=}\StringTok{\textquotesingle{}black\textquotesingle{}}\NormalTok{, }\AttributeTok{fill=}\StringTok{\textquotesingle{}green\textquotesingle{}}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.4}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histograma desigualdad"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Frecuencia"}\NormalTok{, }\AttributeTok{caption =} \StringTok{"Datos Banco Mundial"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 11276 rows containing non-finite values (stat_bin).
+\end{verbatim}
+
+\includegraphics{Taller3_Morales-Pardo-Urango_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datos }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Gasto\_educ))}\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \FloatTok{0.4}\NormalTok{, }\AttributeTok{col=}\StringTok{\textquotesingle{}black\textquotesingle{}}\NormalTok{, }\AttributeTok{fill=}\StringTok{\textquotesingle{}blue\textquotesingle{}}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.4}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Histograma desigualdad"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Frecuencia"}\NormalTok{,}\StringTok{"Gasto en Educación"}\NormalTok{, }\AttributeTok{caption =} \StringTok{"Datos Banco Mundial"}\NormalTok{)}\SpecialCharTok{+}
+  
+ \FunctionTok{scale\_x\_continuous}\NormalTok{(}
+    \AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{0}\NormalTok{, }\AttributeTok{to =} \DecValTok{20}\NormalTok{, }\AttributeTok{by =} \DecValTok{5}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}
+    \AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{0}\NormalTok{, }\AttributeTok{to =} \DecValTok{380}\NormalTok{, }\AttributeTok{by =} \DecValTok{40}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 9135 rows containing non-finite values (stat_bin).
+\end{verbatim}
+
+\includegraphics{Taller3_Morales-Pardo-Urango_files/figure-latex/unnamed-chunk-7-1.pdf}
+\#\# Punto 7
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(}\FunctionTok{cor}\NormalTok{(}\FunctionTok{select}\NormalTok{(datos,}\StringTok{"Desigualdad"}\NormalTok{,}\StringTok{"Progresividad"}\NormalTok{,}\StringTok{"Gasto\_educ"}\NormalTok{,}\StringTok{"Inflacion"}\NormalTok{,}\StringTok{"PIB\_PER\_CAPITA"}\NormalTok{,}\StringTok{"Poblacion"}\NormalTok{), }\AttributeTok{use =} \StringTok{"complete.obs"}\NormalTok{), }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                Desigualdad Progresividad Gasto_educ Inflacion PIB_PER_CAPITA
+## Desigualdad          1.000         0.104     -0.364     0.100         -0.471
+## Progresividad        0.104         1.000      0.077    -0.021          0.283
+## Gasto_educ          -0.364         0.077      1.000    -0.100          0.457
+## Inflacion            0.100        -0.021     -0.100     1.000         -0.166
+## PIB_PER_CAPITA      -0.471         0.283      0.457    -0.166          1.000
+## Poblacion            0.100         0.183     -0.152    -0.001         -0.111
+##                Poblacion
+## Desigualdad        0.100
+## Progresividad      0.183
+## Gasto_educ        -0.152
+## Inflacion         -0.001
+## PIB_PER_CAPITA    -0.111
+## Poblacion          1.000
+\end{verbatim}
+
+De la tabla de correlación anterior podemos concluir que existe una
+correlación negativa entre la desigualdad y el gato público en
+educación, y esta relación era la que esperabamos. Sin embargo, la
+fuerza de la correlación no es muy grande. Por otro lado, la relación
+positiva entre la variable ``Progresividad'' y Desigualad nos
+sorprendió. No obstante, esto puede ser debido a que no estamos
+evaluando el GINI después de impuestos.
+
+La relación positiva entre la inflación y la desigualdad era lo que
+esperabamos de acuer a la teoría económica pues, la erosión de la moneda
+le afecta en mayor medida a la población de menores recursos.
+
+\hypertarget{punto-8}{%
+\subsection{Punto 8}\label{punto-8}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggpairs}\NormalTok{(}\FunctionTok{select}\NormalTok{(datos,}\StringTok{"Desigualdad"}\NormalTok{,}\StringTok{"Progresividad"}\NormalTok{,}\StringTok{"Gasto\_educ"}\NormalTok{,}\StringTok{"Inflacion"}\NormalTok{,}\StringTok{"PIB\_PER\_CAPITA"}\NormalTok{,}\StringTok{"Poblacion"}\NormalTok{))}\SpecialCharTok{+}
+  
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =}\StringTok{"Correlogramas"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme\_hc}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Taller3_Morales-Pardo-Urango_files/figure-latex/unnamed-chunk-9-1.pdf}
+\#\# Punto 9
+
+\end{document}

@@ -2,7 +2,9 @@
 title: "Taller3"
 author: "Morales, Pardo, Urango"
 date: "14/5/2021"
-output: pdf_document
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 ```{r message=FALSE, warning=FALSE}
@@ -36,7 +38,7 @@ datos <- datos %>%  mutate(Año=make_date(year=Año))
 ## Punto 5
 
 ```{r}
-  datasummary_skim(select(datos,"Desigualdad","Progresividad","Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion"), histogram = FALSE)
+#datasummary_skim(select(datos,"Desigualdad","Progresividad","Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion"), histogram = FALSE)
 ```
 
 ## Punto 6
