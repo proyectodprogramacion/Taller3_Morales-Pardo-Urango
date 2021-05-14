@@ -1,0 +1,55 @@
+---
+title: "Taller3"
+author: "Morales, Pardo, Urango"
+date: "14/5/2021"
+output: pdf_document
+---
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(wbstats)
+library(lubridate)
+library(knitr)
+library(modelsummary)
+
+```
+
+## Puntos 1-4
+
+```{r}
+z <- c("SI.POV.GINI","GC.TAX.YPKG.RV.ZS","SE.XPD.TOTL.GD.ZS","FP.CPI.TOTL.ZG","NY.GDP.PCAP.CD","SP.POP.TOTL")
+
+datos <- wb_data(z,country = "countries_only", start_date = 1960, end_date = 2019)
+```
+
+```{r}
+datos <- select(datos,"iso3c","country","date","SI.POV.GINI","GC.TAX.YPKG.RV.ZS","SE.XPD.TOTL.GD.ZS","FP.CPI.TOTL.ZG","NY.GDP.PCAP.CD","SP.POP.TOTL")
+
+names(datos) <- c("Código","Pais","Año","Desigualdad","Progresividad","Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion")
+```
+
+```{r}
+datos <- datos %>%  mutate(Año=make_date(year=Año))
+```
+
+## Punto 5
+
+```{r}
+datasummary(Desigualdad+Progresividad+Gasto_educ+Inflacion+PIB_PER_CAPITA+Poblacion ~ Mean + SD+Median+Min+Max, data = datos)
+
+```
+
+## Punto 6
+
+```{r}
+datos %>% ggplot(mapping = aes(x=Desigualdad))+
+  geom_histogram(binwidth = 0.4, col='black', fill='green', alpha=0.4)+
+  labs(title = "Histograma desigualdad", y="Frecuencia", caption = "Datos Banco Mundial")
+```
+```{r}
+datos %>% ggplot(mapping = aes(x=Gasto_educ))+
+  geom_histogram(binwidth = 0.4, col='black', fill='blue', alpha=0.4)+
+  labs(title = "Histograma desigualdad", y="Frecuencia", caption = "Datos Banco Mundial")
+
+```
+
