@@ -11,7 +11,8 @@ library(wbstats)
 library(lubridate)
 library(knitr)
 library(modelsummary)
-
+library(GGally)
+library(ggthemes)
 ```
 
 ## Puntos 1-4
@@ -57,4 +58,21 @@ datos %>% ggplot(mapping = aes(x=Gasto_educ))+
 
 
 ```
+## Punto 7
 
+```{r}
+round(cor(select(datos,"Desigualdad","Progresividad","Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion"), use = "complete.obs"), 3)
+```
+De la tabla de correlación anterior podemos concluir que existe una correlación negativa entre la desigualdad y el gato público en educación, y esta relación era la que esperabamos. Sin embargo, la fuerza de la correlación no es muy grande. Por otro lado, la relación positiva entre la variable "Progresividad" y Desigualad nos sorprendió. No obstante, esto puede ser debido a que no estamos evaluando el GINI después de impuestos.
+
+La relación positiva entre la inflación y la desigualdad era lo que esperabamos de acuer a la teoría económica pues, la erosión de la moneda le afecta en mayor medida a la población de menores recursos.
+
+## Punto 8
+
+```{r message=FALSE, warning=FALSE}
+ggpairs(select(datos,"Desigualdad","Progresividad","Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion"))+
+  
+  labs(title ="Correlogramas")+
+  theme_hc()
+```
+## Punto 9
