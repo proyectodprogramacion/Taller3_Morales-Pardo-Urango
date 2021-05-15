@@ -48,6 +48,7 @@ datos %>% ggplot(mapping = aes(x=Desigualdad))+
   geom_histogram(binwidth = 0.4, col='black', fill='green', alpha=0.4)+
   labs(title = "Histograma desigualdad", y="Frecuencia", caption = "Datos Banco Mundial")
 ```
+
 ```{r}
 datos %>% ggplot(mapping = aes(x=Gasto_educ))+
   geom_histogram(binwidth = 0.4, col='black', fill='blue', alpha=0.4)+
@@ -60,14 +61,23 @@ datos %>% ggplot(mapping = aes(x=Gasto_educ))+
 
 
 ```
+
 ## Punto 7
 
 ```{r}
 round(cor(select(datos,"Desigualdad","Progresividad","Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion"), use = "complete.obs"), 3)
 ```
-De la tabla de correlación anterior podemos concluir que existe una correlación negativa entre la desigualdad y el gato público en educación, y esta relación era la que esperabamos. Sin embargo, la fuerza de la correlación no es muy grande. Por otro lado, la relación positiva entre la variable "Progresividad" y Desigualad nos sorprendió. No obstante, esto puede ser debido a que no estamos evaluando el GINI después de impuestos.
 
-La relación positiva entre la inflación y la desigualdad era lo que esperabamos de acuer a la teoría económica pues, la erosión de la moneda le afecta en mayor medida a la población de menores recursos.
+De la tabla de correlación anterior podemos concluir que
+existe una correlación negativa entre la desigualdad y el gato público en
+educación, y esta relación era la que esperábamos. Sin embargo, la fuerza de la
+correlación no es muy grande. Por otro lado, la relación positiva entre la
+variable "Progresividad" y Desigualad nos sorprendió. No obstante,
+esto puede ser debido a que no estamos evaluando el GINI después de impuestos.
+
+La relación positiva entre la inflación y la desigualdad era
+lo que esperábamos de acuerdo con la teoría económica pues, la erosión de la
+moneda le afecta en mayor medida a la población de menores recursos.
 
 ## Punto 8
 
@@ -77,4 +87,52 @@ ggpairs(select(datos,"Desigualdad","Progresividad","Gasto_educ","Inflacion","PIB
   labs(title ="Correlogramas")+
   theme_hc()
 ```
+
 ## Punto 9
+
+En primer lugar, se observa que en la distribución de la
+variable de interés "Desigualdad", a pesar de que la desigualdad
+entre países es muy variada, se muestra un evidente sesgo a la derecha.
+Igualmente, la mayoría de las observaciones de países presenta un coeficiente Gini
+con porcentajes entre 25% a 40%. Finalmente, a medida que aumenta la
+desigualdad en términos de índice Gini disminuye la frecuencia de casos de
+países.
+
+ 
+
+En segundo lugar, se observa que la distribución de la
+principal variable independiente "Gasto_educ", es decir, gasto en
+educación (% del PIB), también presenta un sesgo al derecho, pero es demasiado
+pronunciado. A causa de dos valores atípicos de porcentaje de gasto en
+educación de 22.32% y 44.33% aproximadamente pertenecientes a Zimbabue. En
+general, la mayoría de las observaciones presenta un gasto en educación
+porcentual entre el 2.5% al 5.6% aproximadamente.
+
+ 
+
+En tercer lugar, la desigualdad y el gasto en educación
+presentan una correlación positiva como se esperaba. A pesar de que la
+desigualdad y la progresividad tienen una correlación positiva inesperada esto
+puede ser porque no se especifica el coeficiente Gini después de impuestos. Por
+otro lado, la inflación y la desigualdad tiene una correlación positiva como se
+esperaba teniendo en cuenta la teoría económica, ya que la erosión de la moneda
+afecta las familias más desfavorecidas.
+
+ 
+
+Por otra parte, se observa que el pib per cápita y la
+desigualdad presentan una correlación negativa considerable, igualmente, el pib
+per cápita y progresividad tiene una correlación positiva considerable, así
+como, gasto público en menor grado. Debido a que los países con mayor nivel de
+pib per cápita son economías desarrolladas con altos estándares de vida, por lo
+cual, tiene menor desigualdad y mayor gasto educativo que países no
+desarrollados con economías periféricas y menores estándares de vida.
+
+ 
+
+Por último, se puede ver en la tabla de
+correlogramas, que todas las variables presentan un sesgo a la derecha, algunas
+muchísimo más que otras, para ilustrar, variables como gasto educativo,
+inflación, pib per cápita y población presentan un sesgo a la derecha demasiado
+grande producto de valores atípicos demasiado altos, estos valores atípicos
+pueden influenciar la información de la correlación entre las variables.
